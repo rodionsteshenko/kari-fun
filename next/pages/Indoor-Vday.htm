@@ -68,6 +68,70 @@
                 height: 28px;
             }
         }
+
+        /* Project navigation */
+        .project-nav {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        html.darkmode .project-nav {
+            border-top-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .project-nav a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-nav a:hover {
+            opacity: 0.6;
+        }
+
+        .project-nav .nav-prev,
+        .project-nav .nav-next {
+            flex: 1;
+            max-width: 45%;
+        }
+
+        .project-nav .nav-prev {
+            text-align: left;
+        }
+
+        .project-nav .nav-next {
+            text-align: right;
+        }
+
+        .project-nav .nav-label {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-nav .nav-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .project-nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .project-nav .nav-prev,
+            .project-nav .nav-next {
+                max-width: 100%;
+                width: 100%;
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body data-predefined-style="true" data-css-presets="true" data-css-preset data-typography-preset>
@@ -113,6 +177,20 @@
                                     <img src="https://freight.cargo.site/t/original/i/625049eeff0264d5af92259febf1dffbfc7e6874cdff29f221c5650553e5bfde/IVD5.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 7">
                                     <img src="https://freight.cargo.site/t/original/i/c10fc326f8dadedb5f1a3cb2d37f4d4b0c96db2386056757d6bd2cb08238a028/IVD8.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 8">
                                     <img src="https://freight.cargo.site/t/original/i/058c71f902d4234b47174deece95f6f6e3fc30d0caf74a39b58409cf37bd0268/IVD9.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 9">
+                                </div>
+                                <div class="project-nav">
+                                    <div class="nav-prev">
+                                        <a href="Meet-Square-Terminal.htm">
+                                            <div class="nav-label">← Previous</div>
+                                            <div class="nav-title">Meet Square Terminal</div>
+                                        </a>
+                                    </div>
+                                    <div class="nav-next">
+                                        <a href="Cash-App-Wisdom.htm">
+                                            <div class="nav-label">Next →</div>
+                                            <div class="nav-title">Cash App Wisdom</div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </bodycopy>

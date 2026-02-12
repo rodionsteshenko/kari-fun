@@ -68,6 +68,70 @@
                 height: 28px;
             }
         }
+
+        /* Project navigation */
+        .project-nav {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        html.darkmode .project-nav {
+            border-top-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .project-nav a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-nav a:hover {
+            opacity: 0.6;
+        }
+
+        .project-nav .nav-prev,
+        .project-nav .nav-next {
+            flex: 1;
+            max-width: 45%;
+        }
+
+        .project-nav .nav-prev {
+            text-align: left;
+        }
+
+        .project-nav .nav-next {
+            text-align: right;
+        }
+
+        .project-nav .nav-label {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-nav .nav-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .project-nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .project-nav .nav-prev,
+            .project-nav .nav-next {
+                max-width: 100%;
+                width: 100%;
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body data-predefined-style="true" data-css-presets="true" data-css-preset data-typography-preset>
@@ -109,6 +173,20 @@
                                     <img src="https://freight.cargo.site/t/original/i/f579a367c4509aa82c90f95e9f3f518366602c9a021eb313056af45261c4315a/Cash-App-Wisdom-4.png" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 3">
                                     <img src="https://freight.cargo.site/t/original/i/6dde57649b1ec3c30b58032db9f085a69fc5e6eaa68ca26466267bf5de5a44f6/Cash-App-Wisdom-5.png" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 4">
                                     <img src="https://freight.cargo.site/t/original/i/5065c4bbc0008b26b96daaf69315522acd88613b3cebe3c36e8386dcb5796ebd/Cash-App-Wisdom-6.png" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 5">
+                                </div>
+                                <div class="project-nav">
+                                    <div class="nav-prev">
+                                        <a href="Indoor-Vday.htm">
+                                            <div class="nav-label">← Previous</div>
+                                            <div class="nav-title">Indoor V-Day</div>
+                                        </a>
+                                    </div>
+                                    <div class="nav-next">
+                                        <a href="What-do-I-do-with-Cash-App.htm">
+                                            <div class="nav-label">Next →</div>
+                                            <div class="nav-title">What do I do with Cash App?</div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </bodycopy>

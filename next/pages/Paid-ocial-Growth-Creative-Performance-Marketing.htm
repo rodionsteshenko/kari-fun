@@ -68,6 +68,70 @@
                 height: 28px;
             }
         }
+
+        /* Project navigation */
+        .project-nav {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        html.darkmode .project-nav {
+            border-top-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .project-nav a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-nav a:hover {
+            opacity: 0.6;
+        }
+
+        .project-nav .nav-prev,
+        .project-nav .nav-next {
+            flex: 1;
+            max-width: 45%;
+        }
+
+        .project-nav .nav-prev {
+            text-align: left;
+        }
+
+        .project-nav .nav-next {
+            text-align: right;
+        }
+
+        .project-nav .nav-label {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-nav .nav-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .project-nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .project-nav .nav-prev,
+            .project-nav .nav-next {
+                max-width: 100%;
+                width: 100%;
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body data-predefined-style="true" data-css-presets="true" data-css-preset data-typography-preset>
@@ -104,6 +168,15 @@
                                 </div>
                                 <br>
                                 <div class="project-images">
+                                </div>
+                                <div class="project-nav">
+                                    <div class="nav-prev">
+                                        <a href="It-s-Would-You-Rather-et-al.htm">
+                                            <div class="nav-label">← Previous</div>
+                                            <div class="nav-title">It's Would You Rather et al</div>
+                                        </a>
+                                    </div>
+                                    <div class="nav-next"></div>
                                 </div>
                             </div>
                         </bodycopy>

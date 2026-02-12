@@ -68,6 +68,70 @@
                 height: 28px;
             }
         }
+
+        /* Project navigation */
+        .project-nav {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        html.darkmode .project-nav {
+            border-top-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .project-nav a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-nav a:hover {
+            opacity: 0.6;
+        }
+
+        .project-nav .nav-prev,
+        .project-nav .nav-next {
+            flex: 1;
+            max-width: 45%;
+        }
+
+        .project-nav .nav-prev {
+            text-align: left;
+        }
+
+        .project-nav .nav-next {
+            text-align: right;
+        }
+
+        .project-nav .nav-label {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-nav .nav-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .project-nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .project-nav .nav-prev,
+            .project-nav .nav-next {
+                max-width: 100%;
+                width: 100%;
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body data-predefined-style="true" data-css-presets="true" data-css-preset data-typography-preset>
@@ -111,6 +175,15 @@
                                     <img src="https://freight.cargo.site/t/original/i/d10b941adc30255ddc6f97e9d4d96b7a593d8cebbf657fd4adbfb136d0a43da2/HTS_4.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 5">
                                     <img src="https://freight.cargo.site/t/original/i/14d54f5b28115329bedbd88e4a42efdee3e4d7e1311694869c67339167c57aaa/HTS_5.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 6">
                                     <img src="https://freight.cargo.site/t/original/i/7f10499469a6fbe3a47a1f9a53de0bab8ceda0fa39f04662c80953d797a6c06e/HTS_6.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 7">
+                                </div>
+                                <div class="project-nav">
+                                    <div class="nav-prev"></div>
+                                    <div class="nav-next">
+                                        <a href="The-Wine-Room.htm">
+                                            <div class="nav-label">Next →</div>
+                                            <div class="nav-title">The Wine Room</div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </bodycopy>
