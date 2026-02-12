@@ -36,8 +36,9 @@ The styling is split across two files with specific purposes:
 
 ### Typography Control
 
-To adjust font sizes, edit `inline-styles.css` around line 45-50:
+**Fixed font sizes (light/ and dark/):**
 
+Edit `inline-styles.css` around line 45-50:
 ```css
 [data-predefined-style="true"] [local-style="16007614"] h1 {
     font-size: 5.4rem;        /* Main heading size */
@@ -45,6 +46,24 @@ To adjust font sizes, edit `inline-styles.css` around line 45-50:
     color: rgb(40, 40, 40);
     padding: 0;
     margin: 0;
+}
+```
+
+**Responsive font sizes (next/):**
+
+The next/ version uses clamp() for fluid responsive typography:
+```css
+[data-predefined-style="true"] [local-style="16007614"] h1 {
+    font-size: clamp(2rem, 4vw + 1rem, 5.4rem);  /* Scales between 2rem and 5.4rem */
+    line-height: 1.3;
+    ...
+}
+
+@media (max-width: 768px) {
+    [data-predefined-style="true"] [local-style="16007614"] h1 {
+        font-size: clamp(1.8rem, 5vw, 3.5rem);   /* Smaller range for mobile */
+        line-height: 1.4;
+    }
 }
 ```
 
@@ -57,7 +76,14 @@ To adjust font sizes, edit `inline-styles.css` around line 45-50:
   - `light/pages/*.html` - Original downloaded HTML from Cargo (reference only)
   - `light/inline-styles.css` - Cargo framework CSS
   - `light/styles.css` - Custom styles
-- **`dark/`** - Dark mode variation (independent codebase)
+- **`dark/`** - Dark mode variation (CSS invert filter applied to body)
+  - `dark/dark.css` - Dark mode styles using filter: invert(1)
+- **`next/`** - Responsive version with toggle functionality
+  - Dark/light mode toggle button (sun/moon icon in upper right)
+  - Responsive font scaling using clamp()
+  - Mobile-optimized with media queries
+  - Theme persistence via localStorage
+  - All project pages included
 - **`kari-fun-original.html`** - Complete original page source (reference)
 
 ### Images
@@ -86,6 +112,12 @@ Pages use Cargo-specific attributes that control styling via CSS selectors:
 1. Copy `light/` directory to new folder (e.g., `v2/`)
 2. Make desired changes
 3. Add link in root `index.html`
+
+**Dark mode toggle (next/):**
+- Toggle button implemented with SVG sun/moon icons
+- JavaScript toggles `darkmode` class on `<html>` element
+- Theme preference saved to localStorage
+- Dark mode styles applied via `dark.css`
 
 ## Notes
 

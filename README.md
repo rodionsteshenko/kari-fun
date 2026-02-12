@@ -27,8 +27,12 @@ After that, GitHub Pages will serve from the repo root.
 Multiple portfolio variations for experimentation:
 
 - **`/`** - Navigation hub (choose a version)
-- **`/light/`** - Original light theme
-- **`/dark/`** - Dark mode variation
-- Future versions can be added as new directories
+- **`/light/`** - Original light theme (exact clone of kari.fun)
+- **`/dark/`** - Dark mode variation (CSS invert filter)
+- **`/next/`** - Responsive version with dark mode toggle
+  - Dark/light mode toggle button (sun/moon icon)
+  - Responsive font scaling with clamp()
+  - Mobile-optimized layout
+  - localStorage theme persistence
 
 Each version is independent with its own styles and pages.

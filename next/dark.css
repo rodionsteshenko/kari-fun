@@ -1,0 +1,26 @@
+/* Dark mode for static Cargo-exported pages */
+
+html.darkmode {
+  background: #0a0a0a !important;
+  color-scheme: dark;
+}
+
+html.darkmode body {
+  filter: invert(1);
+  background: #0a0a0a !important;
+}
+
+/* Re-invert images and media so they display normally */
+html.darkmode img,
+html.darkmode video,
+html.darkmode iframe,
+html.darkmode canvas {
+  filter: invert(1);
+}
+
+/* Ensure main container has dark background */
+html.darkmode .main_container,
+html.darkmode .page,
+html.darkmode .page_background {
+  background-color: #0a0a0a !important;
+}
