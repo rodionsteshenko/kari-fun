@@ -9,8 +9,155 @@
     <!-- Styles -->
     <link href="../inline-styles.css" rel="stylesheet" type="text/css">
     <link href="../styles.css" rel="stylesheet" type="text/css">
+
+    <!-- Dark mode CSS -->
+    <link href="../dark.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            opacity: 0.7;
+        }
+
+        .dark-mode-toggle svg {
+            width: 32px;
+            height: 32px;
+            transition: transform 0.3s ease;
+        }
+
+        .dark-mode-toggle:active svg {
+            transform: scale(0.9);
+        }
+
+        .sun-icon {
+            display: block;
+        }
+
+        .moon-icon {
+            display: none;
+        }
+
+        html.darkmode .sun-icon {
+            display: none;
+        }
+
+        html.darkmode .moon-icon {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .dark-mode-toggle {
+                top: 15px;
+                right: 15px;
+                padding: 8px;
+            }
+
+            .dark-mode-toggle svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        /* Project navigation */
+        .project-nav {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        
+            position: relative;
+            z-index: 100;}
+
+        html.darkmode .project-nav {
+            border-top-color: rgba(255, 255, 255, 0.15);
+        
+            position: relative;
+            z-index: 100;}
+
+        .project-nav a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-nav a:hover {
+            opacity: 0.6;
+        }
+
+        .project-nav .nav-prev,
+        .project-nav .nav-next {
+            flex: 1;
+            max-width: 45%;
+        }
+
+        .project-nav .nav-prev {
+            text-align: left;
+        }
+
+        .project-nav .nav-next {
+            text-align: right;
+        }
+
+        .project-nav .nav-label {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-nav .nav-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .project-nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            
+            position: relative;
+            z-index: 100;}
+
+            .project-nav .nav-prev,
+            .project-nav .nav-next {
+                max-width: 100%;
+                width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body data-predefined-style="true" data-css-presets="true" data-css-preset data-typography-preset>
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
     <div class="main_container">
         <div class="content_container">
             <div>
@@ -26,21 +173,130 @@
                                     <h1>FriedChickenParty</h1>
                                 </div>
                                 <br>
-                                <div class="project-images">
-                                    <img src="https://freight.cargo.site/t/original/i/92ff942e0202c9c0217d87849104da277452e9c6f388745d5d98a5359dc60cf1/Frame-17.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 1">
-                                    <img src="https://freight.cargo.site/t/original/i/b9cdce7b51889d53b25ee455712101b5e7398e5758e79cc06aaee2c8267de505/deliverablesHBC.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 2">
-                                    <img src="https://freight.cargo.site/t/original/i/208839224b7c369941b31e13c184d4ec21a4660dfff0f76aee9a9ff83a6b283c/Frame-19.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 3">
-                                    <img src="https://freight.cargo.site/t/original/i/c4ab0d72f038f437f27c1ff57561aeca7d4a4f61bd10aeaff07b3dcb961268f7/takeaway.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 4">
-                                    <img src="https://freight.cargo.site/t/original/i/da5cfa40368e1eca88655c44b6c8ef79a2cf0cd630487b849237dc871e4c1a47/HBFC_Menu.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 5">
-                                    <img src="https://freight.cargo.site/t/original/i/b7fbcb7a5e0f64d6d9537ec0f88078ccb5c81e90e8603fe116761423b7b140e5/words-from-chef.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 6">
-                                </div>
-                            </div>
+                                <div class="project-content"><div class="image-gallery" data-gallery="%7B%22mode_id%22%3A6%2C%22gallery_instance_id%22%3A2%2C%22name%22%3A%22Slideshow%22%2C%22path%22%3A%22slideshow%22%2C%22data%22%3A%7B%22autoplay%22%3Afalse%2C%22autoplaySpeed%22%3A2.5%2C%22speed%22%3A0.5%2C%22arrows%22%3Atrue%2C%22transition-type%22%3A%22slide%22%2C%22constrain_height%22%3Atrue%2C%22image_vertical_align%22%3A%22middle%22%2C%22image_horizontal_align%22%3A%22middle%22%2C%22image_alignment%22%3A%22image_middle_middle%22%2C%22mobile_data%22%3A%7B%22separate_mobile_view%22%3Afalse%7D%2C%22meta_data%22%3A%7B%7D%2C%22captions%22%3Atrue%7D%7D">
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/92ff942e0202c9c0217d87849104da277452e9c6f388745d5d98a5359dc60cf1/Frame-17.jpg" data-mid="91384762" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/b9cdce7b51889d53b25ee455712101b5e7398e5758e79cc06aaee2c8267de505/deliverablesHBC.jpg" data-mid="91384593" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/208839224b7c369941b31e13c184d4ec21a4660dfff0f76aee9a9ff83a6b283c/Frame-19.jpg" data-mid="91385038" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/c4ab0d72f038f437f27c1ff57561aeca7d4a4f61bd10aeaff07b3dcb961268f7/takeaway.jpg" data-mid="106491229" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/da5cfa40368e1eca88655c44b6c8ef79a2cf0cd630487b849237dc871e4c1a47/HBFC_Menu.jpg" data-mid="94211512" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/b7fbcb7a5e0f64d6d9537ec0f88078ccb5c81e90e8603fe116761423b7b140e5/words-from-chef.jpg" data-mid="106491230" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+</div><br>
+
+	Caviar teamed up with the James Beard Foundation to host a SXSW afterparty following a panel on “restaurants of the future”—aka restaurants focused on humanity and sustainability. Chicago’s Honey Butter Fried Chicken came to Austin to help us host the event, feed everyone a lot of mac and cheese, and spread a little inspiration <3<br>
+</div>
+</div>
+<br>
+<br>
+				</div>
+
+				
+			</bodycopy>
+		</div>
+
+		<div class="page_background"></div>
+		
+		<style class="local-css" data-target="16740512">
+			[local-style="16740512"] .container_width {
+}
+
+[local-style="16740512"] body {
+	background-color: initial /*!variable_defaults*/;
+}
+
+[local-style="16740512"] .backdrop {
+}
+
+[local-style="16740512"] .page {
+}
+
+[local-style="16740512"] .page_background {
+	background-color: initial /*!page_container_bgcolor*/;
+}
+
+[local-style="16740512"] .content_padding {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] bodycopy {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] bodycopy a {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] bodycopy a:hover {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] h1 {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] h1 a {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] h1 a:hover {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] h2 {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] h2 a {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] h2 a:hover {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] small {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] small a {
+}
+
+[data-predefined-style="true"] [local-style="16740512"] small a:hover {
+}
+		</style>
+			</div>
+
+				
+</div>
+
+<div data-autopaginate="None"></div><div data-view="Thumbnail" data-set="GlobalThumbnails" class="thumbnails">
+	<div class="container thumbnails_width clearfix">
+		<div class="content content_padding">
+			<div class="thumbnails">
+			</div>
+		</div>
+	</div></div>
+			</div>
+
+			<div data-view="pinned_bottom" data-set="Scaffolding" data-position="bottom" class="pinned pinned_bottom">
+				<div class="page_container overlay accommodate fixed" local-style="16007536">
+	<div class="page container container_width clearfix" data-container="content" data-id="16007536">
+		<bodycopy class="bodycopy content content_padding">
+
+			
+			<div class="page_content clearfix" data-elementresizer="None" data-resize-parent="None">
+				<div style="text-align: left"><h1><a href="Nav" rel="history">✏ ✐ ✎</a></h1></div><b><i></i></b></div>
+                                
                         </bodycopy>
                     </div>
                     <div class="page_background"></div>
                 </div>
             </div>
         </div>
+
+        <div class="project-nav">
+                                    <div class="nav-prev">
+                                        <a href="The-Wine-Room.htm">
+                                            <div class="nav-label">← Previous</div>
+                                            <div class="nav-title">The Wine Room</div>
+                                        </a>
+                                    </div>
+                                    <div class="nav-next">
+                                        <a href="Outside-Lands.htm">
+                                            <div class="nav-label">Next →</div>
+                                            <div class="nav-title">Outside Lands</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
         <div class="pinned pinned_bottom">
             <div class="page_container overlay accommodate fixed" local-style="16007536">
@@ -61,5 +317,24 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const toggle = document.querySelector('.dark-mode-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('darkmode');
+        }
+
+        toggle.addEventListener('click', function() {
+            html.classList.toggle('darkmode');
+
+            // Save theme preference
+            const theme = html.classList.contains('darkmode') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+    </script>
 </body>
 </html>

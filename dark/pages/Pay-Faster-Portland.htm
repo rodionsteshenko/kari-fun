@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-predefined-style="true" data-css-presets="true" data-css-preset data-typography-preset class="darkmode">
+<html lang="en" data-predefined-style="true" data-css-presets="true" data-css-preset data-typography-preset>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,9 +9,155 @@
     <!-- Styles -->
     <link href="../inline-styles.css" rel="stylesheet" type="text/css">
     <link href="../styles.css" rel="stylesheet" type="text/css">
+
+    <!-- Dark mode CSS -->
     <link href="../dark.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            opacity: 0.7;
+        }
+
+        .dark-mode-toggle svg {
+            width: 32px;
+            height: 32px;
+            transition: transform 0.3s ease;
+        }
+
+        .dark-mode-toggle:active svg {
+            transform: scale(0.9);
+        }
+
+        .sun-icon {
+            display: block;
+        }
+
+        .moon-icon {
+            display: none;
+        }
+
+        html.darkmode .sun-icon {
+            display: none;
+        }
+
+        html.darkmode .moon-icon {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .dark-mode-toggle {
+                top: 15px;
+                right: 15px;
+                padding: 8px;
+            }
+
+            .dark-mode-toggle svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        /* Project navigation */
+        .project-nav {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        
+            position: relative;
+            z-index: 100;}
+
+        html.darkmode .project-nav {
+            border-top-color: rgba(255, 255, 255, 0.15);
+        
+            position: relative;
+            z-index: 100;}
+
+        .project-nav a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-nav a:hover {
+            opacity: 0.6;
+        }
+
+        .project-nav .nav-prev,
+        .project-nav .nav-next {
+            flex: 1;
+            max-width: 45%;
+        }
+
+        .project-nav .nav-prev {
+            text-align: left;
+        }
+
+        .project-nav .nav-next {
+            text-align: right;
+        }
+
+        .project-nav .nav-label {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-nav .nav-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .project-nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            
+            position: relative;
+            z-index: 100;}
+
+            .project-nav .nav-prev,
+            .project-nav .nav-next {
+                max-width: 100%;
+                width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body data-predefined-style="true" data-css-presets="true" data-css-preset data-typography-preset>
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
     <div class="main_container">
         <div class="content_container">
             <div>
@@ -27,22 +173,140 @@
                                     <h1>Pay Faster Portland</h1>
                                 </div>
                                 <br>
-                                <div class="project-images">
-                                    <img src="https://freight.cargo.site/t/original/i/1a594881ad65345a417bc3c5d754a5e1457e2739eec6168be0b5c123b59922ff/Frame-24.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 1">
-                                    <img src="https://freight.cargo.site/t/original/i/bb55b5d3a6e2c19707ee4616b6147407768fbf46dcfafa2055868dde482adb12/Frame-21.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 2">
-                                    <img src="https://freight.cargo.site/t/original/i/751b0d8a2f58a3abe42f2a88fdad6ce176aa121860d0c77213168a273e96754c/Frame-25.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 3">
-                                    <img src="https://freight.cargo.site/t/original/i/d8a805fc683331f1d7869ea4dd184412cc8bbc773a5290da8ada91e942c41a84/some1.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 4">
-                                    <img src="https://freight.cargo.site/t/original/i/c93e7f6389b9ebcbde52796ea7667aefaa301ef13f6981c02ed573ae765261c6/some2.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 5">
-                                    <img src="https://freight.cargo.site/t/original/i/56d248818aeb5a4aa893166a0d97fc4e74590a0a7ae03a7172c893509944f48f/Frame-26.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 6">
-                                    <img src="https://freight.cargo.site/t/original/i/a1da310bd794cf0c34471f986656a8d75cbbe221a5f6440dd3e83767d0949fe2/Frame-27.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 7">
-                                </div>
-                            </div>
+                                <div class="project-content"><div class="image-gallery" data-gallery="%7B%22mode_id%22%3A6%2C%22gallery_instance_id%22%3A1%2C%22name%22%3A%22Slideshow%22%2C%22path%22%3A%22slideshow%22%2C%22data%22%3A%7B%22autoplay%22%3Afalse%2C%22autoplaySpeed%22%3A2.5%2C%22speed%22%3A0.5%2C%22arrows%22%3Atrue%2C%22transition-type%22%3A%22slide%22%2C%22constrain_height%22%3Atrue%2C%22image_vertical_align%22%3A%22middle%22%2C%22image_horizontal_align%22%3A%22middle%22%2C%22image_alignment%22%3A%22image_middle_middle%22%2C%22mobile_data%22%3A%7B%22separate_mobile_view%22%3Afalse%7D%2C%22meta_data%22%3A%7B%7D%2C%22captions%22%3Atrue%7D%7D">
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/1a594881ad65345a417bc3c5d754a5e1457e2739eec6168be0b5c123b59922ff/Frame-24.jpg" data-mid="91518771" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/bb55b5d3a6e2c19707ee4616b6147407768fbf46dcfafa2055868dde482adb12/Frame-21.jpg" data-mid="91518773" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/751b0d8a2f58a3abe42f2a88fdad6ce176aa121860d0c77213168a273e96754c/Frame-25.jpg" data-mid="91518958" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+</div><br>
+When we first launched Square Reader for contactless and chip—Square’s first NFC and chip card reader—Portland was home to the most new Square Readers in the country. NFC payments were still fairly new to the U.S., so we went to Portland to help get buyers and sellers alike up to speed on this more secure (and way faster) way to pay. <br>
+<br>We took over The Cleaners at Ace Hotel for a weekend and hosted the Payphone Pop-Up, where Portlanders could drop-in and get everything from yoga classes to almond milk cappuccinos for just two bucks, as long as they paid with their phone.<br>
+<br>
+<div class="image-gallery" data-gallery="%7B%22mode_id%22%3A6%2C%22gallery_instance_id%22%3A2%2C%22name%22%3A%22Slideshow%22%2C%22path%22%3A%22slideshow%22%2C%22data%22%3A%7B%22autoplay%22%3Afalse%2C%22autoplaySpeed%22%3A2.5%2C%22speed%22%3A0.5%2C%22arrows%22%3Atrue%2C%22transition-type%22%3A%22slide%22%2C%22constrain_height%22%3Atrue%2C%22image_vertical_align%22%3A%22middle%22%2C%22image_horizontal_align%22%3A%22middle%22%2C%22image_alignment%22%3A%22image_middle_middle%22%2C%22mobile_data%22%3A%7B%22separate_mobile_view%22%3Afalse%7D%2C%22meta_data%22%3A%7B%7D%2C%22captions%22%3Atrue%7D%7D">
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/d8a805fc683331f1d7869ea4dd184412cc8bbc773a5290da8ada91e942c41a84/some1.jpg" data-mid="91519052" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/c93e7f6389b9ebcbde52796ea7667aefaa301ef13f6981c02ed573ae765261c6/some2.jpg" data-mid="91519053" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+</div><br>We partnered with Portland couriers and Apple Pay to make<br>
+sure it was easy to get to our pop-up. Plus, the couriers helped us get the word out by sporting cool tees/distributing cool flyers. And we encouraged all sellers to get this more secure technology by hosting workshops where they could talk to Square’s small business pros, and get free hardware.<br>
+</div>
+</div>
+<br>
+<div class="image-gallery" data-gallery="%7B%22mode_id%22%3A6%2C%22gallery_instance_id%22%3A3%2C%22name%22%3A%22Slideshow%22%2C%22path%22%3A%22slideshow%22%2C%22data%22%3A%7B%22autoplay%22%3Afalse%2C%22autoplaySpeed%22%3A2.5%2C%22speed%22%3A0.5%2C%22arrows%22%3Atrue%2C%22transition-type%22%3A%22slide%22%2C%22constrain_height%22%3Atrue%2C%22image_vertical_align%22%3A%22middle%22%2C%22image_horizontal_align%22%3A%22middle%22%2C%22image_alignment%22%3A%22image_middle_middle%22%2C%22mobile_data%22%3A%7B%22separate_mobile_view%22%3Afalse%7D%2C%22meta_data%22%3A%7B%7D%2C%22captions%22%3Atrue%7D%7D">
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/56d248818aeb5a4aa893166a0d97fc4e74590a0a7ae03a7172c893509944f48f/Frame-26.jpg" data-mid="91519576" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+<img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/a1da310bd794cf0c34471f986656a8d75cbbe221a5f6440dd3e83767d0949fe2/Frame-27.jpg" data-mid="91519575" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+</div><br>Plus, for every reader Square Reader purchased, we’d<br>
+include $25,0000 in free processing, and a display kit—so their customers knew they could pay with their phone.<br>
+<br>
+</div></div>
+<br>
+				</div>
+
+				
+			</bodycopy>
+		</div>
+
+		<div class="page_background"></div>
+		
+		<style class="local-css" data-target="16763106">
+			[local-style="16763106"] .container_width {
+}
+
+[local-style="16763106"] body {
+	background-color: initial /*!variable_defaults*/;
+}
+
+[local-style="16763106"] .backdrop {
+}
+
+[local-style="16763106"] .page {
+}
+
+[local-style="16763106"] .page_background {
+	background-color: initial /*!page_container_bgcolor*/;
+}
+
+[local-style="16763106"] .content_padding {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] bodycopy {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] bodycopy a {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] bodycopy a:hover {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] h1 {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] h1 a {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] h1 a:hover {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] h2 {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] h2 a {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] h2 a:hover {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] small {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] small a {
+}
+
+[data-predefined-style="true"] [local-style="16763106"] small a:hover {
+}
+		</style>
+			</div>
+
+				
+</div>
+
+<div data-autopaginate="None"></div><div data-view="Thumbnail" data-set="GlobalThumbnails" class="thumbnails">
+	<div class="container thumbnails_width clearfix">
+		<div class="content content_padding">
+			<div class="thumbnails">
+			</div>
+		</div>
+	</div></div>
+			</div>
+
+			<div data-view="pinned_bottom" data-set="Scaffolding" data-position="bottom" class="pinned pinned_bottom">
+				<div class="page_container overlay accommodate fixed" local-style="16007536">
+	<div class="page container container_width clearfix" data-container="content" data-id="16007536">
+		<bodycopy class="bodycopy content content_padding">
+
+			
+			<div class="page_content clearfix" data-elementresizer="None" data-resize-parent="None">
+				<div style="text-align: left"><h1><a href="Nav" rel="history">✏ ✐ ✎</a></h1></div><b><i></i></b></div>
+                                
                         </bodycopy>
                     </div>
                     <div class="page_background"></div>
                 </div>
             </div>
         </div>
+
+        <div class="project-nav">
+                                    <div class="nav-prev">
+                                        <a href="Outside-Lands.htm">
+                                            <div class="nav-label">← Previous</div>
+                                            <div class="nav-title">Outside Lands</div>
+                                        </a>
+                                    </div>
+                                    <div class="nav-next">
+                                        <a href="It-s-the-Point-of-Sale-Squared.htm">
+                                            <div class="nav-label">Next →</div>
+                                            <div class="nav-title">It's the Point of Sale, Squared</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
         <div class="pinned pinned_bottom">
             <div class="page_container overlay accommodate fixed" local-style="16007536">
@@ -63,5 +327,24 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const toggle = document.querySelector('.dark-mode-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('darkmode');
+        }
+
+        toggle.addEventListener('click', function() {
+            html.classList.toggle('darkmode');
+
+            // Save theme preference
+            const theme = html.classList.contains('darkmode') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+    </script>
 </body>
 </html>

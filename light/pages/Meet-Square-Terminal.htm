@@ -9,8 +9,155 @@
     <!-- Styles -->
     <link href="../inline-styles.css" rel="stylesheet" type="text/css">
     <link href="../styles.css" rel="stylesheet" type="text/css">
+
+    <!-- Dark mode CSS -->
+    <link href="../dark.css" rel="stylesheet" type="text/css">
+
+    <style>
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        .dark-mode-toggle:hover {
+            opacity: 0.7;
+        }
+
+        .dark-mode-toggle svg {
+            width: 32px;
+            height: 32px;
+            transition: transform 0.3s ease;
+        }
+
+        .dark-mode-toggle:active svg {
+            transform: scale(0.9);
+        }
+
+        .sun-icon {
+            display: block;
+        }
+
+        .moon-icon {
+            display: none;
+        }
+
+        html.darkmode .sun-icon {
+            display: none;
+        }
+
+        html.darkmode .moon-icon {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .dark-mode-toggle {
+                top: 15px;
+                right: 15px;
+                padding: 8px;
+            }
+
+            .dark-mode-toggle svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        /* Project navigation */
+        .project-nav {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        
+            position: relative;
+            z-index: 100;}
+
+        html.darkmode .project-nav {
+            border-top-color: rgba(255, 255, 255, 0.15);
+        
+            position: relative;
+            z-index: 100;}
+
+        .project-nav a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-nav a:hover {
+            opacity: 0.6;
+        }
+
+        .project-nav .nav-prev,
+        .project-nav .nav-next {
+            flex: 1;
+            max-width: 45%;
+        }
+
+        .project-nav .nav-prev {
+            text-align: left;
+        }
+
+        .project-nav .nav-next {
+            text-align: right;
+        }
+
+        .project-nav .nav-label {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-nav .nav-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .project-nav {
+                flex-direction: column;
+                gap: 1.5rem;
+            
+            position: relative;
+            z-index: 100;}
+
+            .project-nav .nav-prev,
+            .project-nav .nav-next {
+                max-width: 100%;
+                width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
 </head>
 <body data-predefined-style="true" data-css-presets="true" data-css-preset data-typography-preset>
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
     <div class="main_container">
         <div class="content_container">
             <div>
@@ -26,16 +173,135 @@
                                     <h1>Meet Square Terminal</h1>
                                 </div>
                                 <br>
-                                <div class="project-images">
-                                    <img src="https://freight.cargo.site/t/original/i/a38fd8f0ee4ae49d99426925271c58e31be44a11b42456b8cf7c837e8e4a4470/Frame-39.jpg" style="width: 100%; height: auto; margin-bottom: 2rem;" alt="Image 1">
-                                </div>
-                            </div>
+                                <div class="project-content"><img width="4978" height="2836" width_o="4978" height_o="2836" src="https://freight.cargo.site/t/original/i/a38fd8f0ee4ae49d99426925271c58e31be44a11b42456b8cf7c837e8e4a4470/Frame-39.jpg" data-mid="91526826" border="0"  style="width: 100%; height: auto; margin-bottom: 2rem;" />
+<br>
+<br>
+
+	We launched Square Terminal, an all-in-one credit card machine for payments and receipts, in October 2018. These tutorial videos walk sellers through every step of Square Terminal, from unboxing to software customization. <br></div>
+</div><br>
+
+	<iframe width="1920" height="1080" src="https://www.youtube.com/embed/S03BNsM3V0o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="width: 600.066px; height: 337.537px;" data-scale="100" class=""></iframe>
+<br></div>
+	<iframe width="1920" height="1080" src="https://www.youtube.com/embed/i1uuR12nfbQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="width: 600.066px; height: 337.537px;"></iframe>
+<br></div>
+</div>
+<br>
+<iframe width="2487" height="1398" src="https://www.youtube.com/embed/3-UpNGeBPz0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="width: 1276.86px; height: 717.752px;" data-scale="100" class=""></iframe><br><br>
+<br>
+				</div>
+
+				
+			</bodycopy>
+		</div>
+
+		<div class="page_background"></div>
+		
+		<style class="local-css" data-target="16764571">
+			[local-style="16764571"] .container_width {
+	width: 100% /*!variable_defaults*/;
+}
+
+[local-style="16764571"] body {
+}
+
+[local-style="16764571"] .backdrop {
+}
+
+[local-style="16764571"] .page {
+}
+
+[local-style="16764571"] .page_background {
+	background-color: initial /*!page_container_bgcolor*/;
+}
+
+[local-style="16764571"] .content_padding {
+	padding-top: 2rem /*!main_margin*/;
+	padding-bottom: 2rem /*!main_margin*/;
+	padding-left: 2rem /*!main_margin*/;
+	padding-right: 2rem /*!main_margin*/;
+}
+
+[data-predefined-style="true"] [local-style="16764571"] bodycopy {
+}
+
+[data-predefined-style="true"] [local-style="16764571"] bodycopy a {
+}
+
+[data-predefined-style="true"] [local-style="16764571"] bodycopy a:hover {
+}
+
+[data-predefined-style="true"] [local-style="16764571"] h1 {
+}
+
+[data-predefined-style="true"] [local-style="16764571"] h1 a {
+}
+
+[data-predefined-style="true"] [local-style="16764571"] h1 a:hover {
+}
+
+[data-predefined-style="true"] [local-style="16764571"] h2 {
+}
+
+[data-predefined-style="true"] [local-style="16764571"] h2 a {
+}
+
+[data-predefined-style="true"] [local-style="16764571"] h2 a:hover {
+}
+
+[data-predefined-style="true"] [local-style="16764571"] small {
+}
+
+[data-predefined-style="true"] [local-style="16764571"] small a {
+}
+
+[data-predefined-style="true"] [local-style="16764571"] small a:hover {
+}
+		</style>
+			</div>
+
+				
+</div>
+
+<div data-autopaginate="None"></div><div data-view="Thumbnail" data-set="GlobalThumbnails" class="thumbnails">
+	<div class="container thumbnails_width clearfix">
+		<div class="content content_padding">
+			<div class="thumbnails">
+			</div>
+		</div>
+	</div></div>
+			</div>
+
+			<div data-view="pinned_bottom" data-set="Scaffolding" data-position="bottom" class="pinned pinned_bottom">
+				<div class="page_container overlay accommodate fixed" local-style="16007536">
+	<div class="page container container_width clearfix" data-container="content" data-id="16007536">
+		<bodycopy class="bodycopy content content_padding">
+
+			
+			<div class="page_content clearfix" data-elementresizer="None" data-resize-parent="None">
+				<div style="text-align: left"><h1><a href="Nav" rel="history">✏ ✐ ✎</a></h1></div><b><i></i></b></div>
+                                
                         </bodycopy>
                     </div>
                     <div class="page_background"></div>
                 </div>
             </div>
         </div>
+
+        <div class="project-nav">
+                                    <div class="nav-prev">
+                                        <a href="It-s-the-Point-of-Sale-Squared.htm">
+                                            <div class="nav-label">← Previous</div>
+                                            <div class="nav-title">It's the Point of Sale, Squared</div>
+                                        </a>
+                                    </div>
+                                    <div class="nav-next">
+                                        <a href="Indoor-Vday.htm">
+                                            <div class="nav-label">Next →</div>
+                                            <div class="nav-title">Indoor V-Day</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
         <div class="pinned pinned_bottom">
             <div class="page_container overlay accommodate fixed" local-style="16007536">
@@ -56,5 +322,24 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const toggle = document.querySelector('.dark-mode-toggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('darkmode');
+        }
+
+        toggle.addEventListener('click', function() {
+            html.classList.toggle('darkmode');
+
+            // Save theme preference
+            const theme = html.classList.contains('darkmode') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        });
+    </script>
 </body>
 </html>
