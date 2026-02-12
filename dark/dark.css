@@ -11,14 +11,15 @@ html.darkmode {
 }
 
 html.darkmode body {
-  filter: invert(1) hue-rotate(180deg);
+  filter: invert(1);
+  background: #1a1a1a !important;
 }
 
 html.darkmode img,
 html.darkmode video,
 html.darkmode iframe,
 html.darkmode canvas {
-  filter: invert(1) hue-rotate(180deg);
+  filter: invert(1);
 }
 
 /* Make links readable in dark mode after inversion */
