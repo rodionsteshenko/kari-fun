@@ -1,26 +1,72 @@
-/* Dark mode for static Cargo-exported pages */
+/* Dark mode with proper dark colors */
 
 html.darkmode {
-  background: #0a0a0a !important;
+  background: #1a1a1a !important;
   color-scheme: dark;
 }
 
 html.darkmode body {
-  filter: invert(1);
-  background: #0a0a0a !important;
+  background: #1a1a1a !important;
+  color: #e0e0e0 !important;
 }
 
-/* Re-invert images and media so they display normally */
-html.darkmode img,
-html.darkmode video,
-html.darkmode iframe,
-html.darkmode canvas {
-  filter: invert(1);
-}
-
-/* Ensure main container has dark background */
+/* Dark backgrounds */
 html.darkmode .main_container,
 html.darkmode .page,
 html.darkmode .page_background {
-  background-color: #0a0a0a !important;
+  background-color: #1a1a1a !important;
+}
+
+/* Text colors */
+html.darkmode h1,
+html.darkmode h2,
+html.darkmode bodycopy {
+  color: #e0e0e0 !important;
+}
+
+/* Link colors - keep the colored links but adjust brightness */
+html.darkmode a {
+  color: #a0a0a0 !important;
+}
+
+html.darkmode a[href] span[style*="color: rgb(0, 0, 0)"],
+html.darkmode a[href] span[style*="color: #000"] {
+  color: #e0e0e0 !important;
+}
+
+/* Preserve other colored links with slight brightness adjustment */
+html.darkmode a[href] span[style*="color: #653fff"] {
+  color: #8f6fff !important;
+}
+
+html.darkmode a[href] span[style*="color: rgb(16, 54, 246)"] {
+  color: #4a7aff !important;
+}
+
+html.darkmode a[href] span[style*="color: #f90000"] {
+  color: #ff4444 !important;
+}
+
+html.darkmode a[href] span[style*="color: #939393"] {
+  color: #b0b0b0 !important;
+}
+
+html.darkmode a[href] span[style*="color: #0af112"] {
+  color: #3aff42 !important;
+}
+
+html.darkmode a[href] span[style*="color: #941bf1"] {
+  color: #b84fff !important;
+}
+
+html.darkmode a[href] span[style*="color: #fbb800"] {
+  color: #ffd040 !important;
+}
+
+html.darkmode a[href] span[style*="color: rgb(180, 36, 242)"] {
+  color: #c060ff !important;
+}
+
+html.darkmode a[href] span[style*="color: rgb(17, 177, 245)"] {
+  color: #40b0ff !important;
 }
