@@ -14,6 +14,8 @@ python3 -m http.server 8000
 # Open http://localhost:8000
 ```
 
+Root page provides navigation to all versions (`/light/`, `/dark/`, etc.)
+
 **Deploy to GitHub Pages:**
 Push to `main` branch. GitHub Pages serves from repo root.
 
@@ -48,11 +50,15 @@ To adjust font sizes, edit `inline-styles.css` around line 45-50:
 
 ### Page Structure
 
-- **`index.html`** - Homepage with project grid
-- **`pages/*.htm`** - Clean generated project pages (15 total)
-- **`pages/*.html`** - Original downloaded HTML from Cargo (reference only)
+- **`index.html`** - Root navigation hub (links to all versions)
+- **`light/`** - Original light theme version
+  - `light/index.html` - Homepage with project grid
+  - `light/pages/*.htm` - Clean generated project pages (15 total)
+  - `light/pages/*.html` - Original downloaded HTML from Cargo (reference only)
+  - `light/inline-styles.css` - Cargo framework CSS
+  - `light/styles.css` - Custom styles
+- **`dark/`** - Dark mode variation (independent codebase)
 - **`kari-fun-original.html`** - Complete original page source (reference)
-- **`dark/`** - Separate dark mode build (independent codebase)
 
 ### Images
 
@@ -67,14 +73,19 @@ Pages use Cargo-specific attributes that control styling via CSS selectors:
 
 ## Making Changes
 
-**Adjust homepage font size:** Edit `inline-styles.css` line 46
+**Adjust homepage font size:** Edit `light/inline-styles.css` line 46
 
 **Add new project page:**
-1. Create `.htm` file in `pages/` directory
+1. Create `.htm` file in `light/pages/` directory
 2. Follow structure from existing pages
-3. Add link in `index.html`
+3. Add link in `light/index.html`
 
-**Change colors:** Edit inline `style=""` attributes in HTML or add CSS to `styles.css`
+**Change colors:** Edit inline `style=""` attributes in HTML or add CSS to `light/styles.css`
+
+**Create new version:**
+1. Copy `light/` directory to new folder (e.g., `v2/`)
+2. Make desired changes
+3. Add link in root `index.html`
 
 ## Notes
 

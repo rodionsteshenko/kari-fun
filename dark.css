@@ -1,0 +1,32 @@
+/* Dark mode shim for static Cargo-exported pages.
+
+   Strategy:
+   - Many elements have inline colors we can't realistically override.
+   - We invert the whole page, then re-invert media so images/videos look normal.
+*/
+
+html.darkmode {
+  background: #0b0d10;
+  color-scheme: dark;
+}
+
+html.darkmode body {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+html.darkmode img,
+html.darkmode video,
+html.darkmode iframe,
+html.darkmode canvas {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Make links readable in dark mode after inversion */
+html.darkmode a {
+  text-decoration-color: rgba(255,255,255,0.35);
+}
+
+/* Optional: soften pure white backgrounds from inlined styles */
+html.darkmode body {
+  background: #0b0d10;
+}
